@@ -6,6 +6,8 @@ RottenAverage takes a Rotten Tomatoes url as input and returns that movie or TV 
 
 RottenAverage was built with a Ruby on Rails backend including a PostgreSQL database and a React frontend.
 
+x
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
