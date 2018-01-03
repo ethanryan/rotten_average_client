@@ -22,6 +22,36 @@
   font-size: large;
 }
 
+.App-footer {
+  font-size: large;
+  background-color: pink;
+}
+
+.CreateUrlForm {
+  border: 2px solid red;
+  border-radius: 25px;
+  background: white;
+
+  /*padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;*/
+
+  margin: 5px 10px 5px 10px;
+  /*top, right, bottom, left*/
+  white-space: pre-wrap; /*this is to preserve line breaks added by users*/
+  line-height: 1.1;
+}
+
+.AllUrls {
+  border: 2px solid green;
+  border-radius: 25px;
+  background: white;
+  margin: 5px 15px 50px 15px;
+  padding: 0px 10%;
+  /*top right bottom left*/
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
