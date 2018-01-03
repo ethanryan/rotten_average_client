@@ -48,7 +48,16 @@
   border-radius: 25px;
   background: white;
   margin: 5px 15px 50px 15px;
-  padding: 0px 10%;
+  padding: 10px 10px 10px 10px;
+  /*top right bottom left*/
+}
+
+.EachUrl {
+  border: 2px solid orange;
+  border-radius: 25px;
+  background: white;
+  margin: 5px 15px 50px 15px;
+  padding: 10px 10px 10px 10px;
   /*top right bottom left*/
 }
 

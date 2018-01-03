@@ -1,35 +1,40 @@
 import React from 'react'
 
-//import OneStory from './OneStory'
-
+import { Card } from 'semantic-ui-react'
 
 const AllUrls = (props) => {
 
-  ///add scrollToTop function here
-  //const filteredStories = props.stories.filter(story => story.user_id === props.user_id)
+  const allOfTheUrls = props.urls //an array
 
-  // console.log('hello from AllUrls')
-  return(
+  const eachUrl = allOfTheUrls.map( (urlObject) =>
 
-<div className="AllUrls">
-      {/* <div key={props.id} className="AllUrls-green">
-
-      <h1 className="center">{props.username}'s stories</h1>
-      <h3 className="center">stories by: {props.username}</h3>
-      <h3 className="center">total stories: {filteredStories.length}</h3>
-
-      <OneStory
-        handleDeleteStory={props.handleDeleteStory}
-        stories={props.stories}
-        user_id={props.user_id}
-      /> */}
-
-      {/* <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> */}
-
-
-      <p>AllUrls listed below</p>
+    <div key={urlObject.id ? urlObject.id : "urlObject.id here"} className="EachUrl">
+      <Card fluid >
+        <Card.Content>
+          <Card.Header>
+            <h2>URL id: {urlObject.id ? urlObject.id : "urlObject.id here"}</h2>
+          </Card.Header>
+            <h1>URL: {urlObject.url ? urlObject.url : "urlObject.url here"}</h1>
+        </Card.Content>
+      </Card>
     </div>
   )
+
+console.log('hello from AllUrls, props: ', props)
+console.log('allOfTheUrls: ', allOfTheUrls)
+console.log('allOfTheUrls.length: ', allOfTheUrls.length)
+console.log('eachUrl: ', eachUrl)
+
+return(
+  <div className="AllUrls">
+    <p>Total URLs in database: {allOfTheUrls.length}</p>
+
+    <p>AllUrls listed below</p>
+
+    <div>{ eachUrl.reverse() }</div>
+  </div>
+  )
 }
+
 
 export default AllUrls

@@ -1,52 +1,23 @@
 import React, {Component} from 'react'
 
-//import { withRouter } from 'react-router-dom'
-
 import * as api from '../api'
-
-// import NavBar from '../components/NavBar'
-// import NavBarLoginSignUp from '../components/NavBarLoginSignUp'
-// import StoryPage from '../components/StoryPage'
 
 import CreateUrlForm from '../components/CreateUrlForm'
 import AllUrls from '../components/AllUrls'
 
-// import LoginSignUp from '../container/LoginSignUp'
-
 
 class RottenAverageContainer extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      urls: [],
-
-      stories: [
-        {
-          characters: 'story characters here',
-          content: 'words words ----- word words words',
-          genres: [{one_genre: 'story genres here'}],
-          id: 'story ID here',
-          paragraphs: 'story paragraphs here',
-          plots: [{title: 'Halloween'}],
-          title: 'title here',
-          user: 'user here'
-        }
+      urls: [
+        {url: 'url_here'}
       ],
-      story: 'cool story here',
-      title: 'cool story title here',
-      user: {
-        id: 'user_id here',
-        name: 'user_name here'
-      },
       image: '',
-      plots: [],
-      genres: [],
-      users: [],
       nameOrPasswordError: false,
       usernameExistsError: false,
-    }
+   }
   }
-
 
   componentDidMount() {
 
@@ -55,20 +26,6 @@ class RottenAverageContainer extends Component {
       urls: data
     }) )
 
-    // api.getStories()
-    // .then( data => this.setState({
-    //   stories: data
-    // }) )
-    //
-    // api.getPlots()
-    // .then( data => this.setState({
-    //   plots: data
-    // }) )
-    //
-    // api.getUsers()
-    // .then (user => this.setState({
-    //   users: user
-    // }) )
     //
     // api.getCurrentUser()
     // .then (user => this.setState({
@@ -89,60 +46,22 @@ class RottenAverageContainer extends Component {
 }
 
 
-
-
 render() {
-  if(localStorage.getItem('jwt')) {
-    // console.log('jwt: ', this.jwt)
-    // console.log('props from RottenAverageContainer: ', this.props)
+
     console.log('state from RottenAverageContainer: ', this.state)
-    // console.log('state.users.length 0 means NO INTERNET: ', this.state.users.length)
-    return(
-      <div>
-        <CreateUrlForm/>
-
-        <AllUrls/>
-
-        {/* <NavBar
-          title="Word Nerds"
-          current_user={this.state.user ? this.state.user.name : "current_user here"}
-          logout={this.logout.bind(this)}
-        />
-        <StoryPage
-          //props for CreateStoryForm
-          handleSubmit={this.handleSubmit.bind(this)}
-
-          //props for EditStoryForm
-          handleDeleteStory={this.handleDeleteStory.bind(this)}
-          handleUpdateStory={this.handleUpdateStory.bind(this)}
-          story={this.state.story}
-          title={this.state.title}
-          image={this.state.image}
-          user={this.state.user}
-
-          //props for AllStories
-          stories={this.state.stories}
-          plots={this.state.plots}
-          users={this.state.users}
-        /> */}
-      </div>
-    )
-  }
-  else {
-    console.log('state from RottenAverageContainer: ', this.state)
-    // console.log('state.users.length 0 means NO INTERNET: ', this.state.users.length)
     return(
       <div>
 
         <CreateUrlForm />
 
-        <AllUrls />
+        <AllUrls
+          //props for AllUrls
+          urls={this.state.urls}
+         />
 
       </div>
     )
   }
 }
-}
 
-//export default withRouter(RottenAverageContainer)
 export default RottenAverageContainer

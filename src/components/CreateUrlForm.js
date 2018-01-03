@@ -5,7 +5,7 @@ import { Form, Grid } from 'semantic-ui-react'
 class CreateUrlForm extends Component {
 
   constructor(props) {
-    console.log('**** props from CreateUrlForm:', props)
+    //console.log('**** props from CreateUrlForm:', props)
     super(props)
     this.state=({ //organizing this so it's not nested, but post request will be nested
     story: '',
