@@ -6,17 +6,51 @@ const AllUrls = (props) => {
 
   const allOfTheUrls = props.urls //an array
 
+
+  function movieOrTVshow(movie_or_tv) {
+    if (movie_or_tv === "m") {
+      return "movie"
+    }
+    if (movie_or_tv === "tv") {
+      return "TV show"
+    }
+  }
+
+  function rottenAverage(tomato_meter, audience_score) {
+    if ( (tomato_meter === "null") && (audience_score === "null") ) {
+      return "does not compute"
+    }
+    if ( !(tomato_meter === "null") && (audience_score === "null") ) {
+      return tomato_meter
+    }
+    if ( (tomato_meter === "null") && !(audience_score === "null") ) {
+      return audience_score
+    }
+    if ( !(tomato_meter === "null") && !(audience_score === "null") ) {
+      var tomato = parseInt(tomato_meter)
+      var audience = parseInt(audience_score)
+      var total = tomato + audience
+      var totalDividedByTwo = (total / 2)
+      var answer = totalDividedByTwo.toString()
+      return answer
+    }
+  }
+
   const eachUrl = allOfTheUrls.map( (urlObject) =>
 
+
     <div key={urlObject.id ? urlObject.id : "urlObject.id here"} className="EachUrl">
+
       <Card fluid >
         <Card.Content>
           <Card.Header>
             <p>URL id: {urlObject.id ? urlObject.id : "urlObject.id here"}</p>
           </Card.Header>
-            <h1>h1 title: {urlObject.url ? urlObject.url : "urlObject.url here"}</h1>
-            <h2>h2 movie or show</h2>
-            <h3>h3 RottenAverage (get TomatoMeter + Audience Score / 2)</h3>
+            <h1>{urlObject.title ? urlObject.title : "urlObject.title here"}</h1>
+            <h2>{urlObject.movie_or_tv ? movieOrTVshow(urlObject.movie_or_tv) : "urlObject.movie_or_show here"}</h2>
+            <h3>RottenAverage: { rottenAverage(urlObject.tomato_meter, urlObject.audience_score) }</h3>
+            <p>Tomato Meter: {urlObject.tomato_meter ? urlObject.tomato_meter : "urlObject.tomato_meter here"}</p>
+            <p>Audience Score: {urlObject.audience_score ? urlObject.audience_score : "urlObject.audience_score here"}</p>
             <a href={urlObject.url} target="_blank">{urlObject.url ? urlObject.url : "urlObject.url here"}</a>
         </Card.Content>
       </Card>
