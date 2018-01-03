@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 //import { withRouter } from 'react-router-dom'
 
-//import * as api from '../api'
+import * as api from '../api'
 
 // import NavBar from '../components/NavBar'
 // import NavBarLoginSignUp from '../components/NavBarLoginSignUp'
@@ -18,6 +18,8 @@ class RottenAverageContainer extends Component {
   constructor() {
     super()
     this.state = {
+      urls: [],
+
       stories: [
         {
           characters: 'story characters here',
@@ -47,6 +49,12 @@ class RottenAverageContainer extends Component {
 
 
   componentDidMount() {
+
+    api.getUrls()
+    .then( data => this.setState({
+      urls: data
+    }) )
+
     // api.getStories()
     // .then( data => this.setState({
     //   stories: data
