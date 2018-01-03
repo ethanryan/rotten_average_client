@@ -12,9 +12,12 @@ const AllUrls = (props) => {
       <Card fluid >
         <Card.Content>
           <Card.Header>
-            <h2>URL id: {urlObject.id ? urlObject.id : "urlObject.id here"}</h2>
+            <p>URL id: {urlObject.id ? urlObject.id : "urlObject.id here"}</p>
           </Card.Header>
-            <h1>URL: {urlObject.url ? urlObject.url : "urlObject.url here"}</h1>
+            <h1>h1 title: {urlObject.url ? urlObject.url : "urlObject.url here"}</h1>
+            <h2>h2 movie or show</h2>
+            <h3>h3 RottenAverage (get TomatoMeter + Audience Score / 2)</h3>
+            <a href={urlObject.url} target="_blank">{urlObject.url ? urlObject.url : "urlObject.url here"}</a>
         </Card.Content>
       </Card>
     </div>
