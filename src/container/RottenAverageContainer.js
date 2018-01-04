@@ -11,7 +11,7 @@ class RottenAverageContainer extends Component {
     super(props)
     this.state = {
       urls: [
-        {url: 'url_here'}
+        {link: 'url_here'}
       ],
       image: '',
       nameOrPasswordError: false,
@@ -26,24 +26,19 @@ class RottenAverageContainer extends Component {
       urls: data
     }) )
 
-    //
-    // api.getCurrentUser()
-    // .then (user => this.setState({
-    //   user: user.user
-    // }) )
   }
 
-
-  handleSubmit(characters, user_id) { //adding user_id as argument -- ER Nov 2017
-  //   api.createStory(characters, user_id) //adding user_id as argument -- ER Nov 2017
-  //   .then( story => this.setState(
-  //     prevState => ({
-  //       stories: [...prevState.stories, story]
-  //     })
-  //   )
-  // )
-  // this.props.history.push(`/stories`) //redirect to all stories
+///////get this fucker working...
+  handleSubmit(url) {
+    api.createUrl(url)
+    .then( url => this.setState(
+      prevState => ({
+        urls: [...prevState.urls, url]
+      })
+    )
+  )
 }
+  //this.props.history.push(`/`) //redirect to root
 
 
 render() {
@@ -52,7 +47,10 @@ render() {
     return(
       <div>
 
-        <CreateUrlForm />
+        <CreateUrlForm
+          //props for CreateUrlForm
+          handleSubmit={this.handleSubmit.bind(this)}
+        />
 
         <AllUrls
           //props for AllUrls

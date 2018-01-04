@@ -5,16 +5,12 @@ import { Form, Grid } from 'semantic-ui-react'
 class CreateUrlForm extends Component {
 
   constructor(props) {
-    //console.log('**** props from CreateUrlForm:', props)
+    console.log('**** props from CreateUrlForm:', props)
     super(props)
-    this.state=({ //organizing this so it's not nested, but post request will be nested
-    story: '',
-    //user_id: this.props.user_id, //need to set user_id here??? keep losing user_id on page reload
-    hero: {
-      name: 'HERO',
-    },
-  })
-  this.handleCreateStoryFormSubmit = this.handleCreateStoryFormSubmit.bind(this)
+    this.state=({
+      link: '',
+    })
+  this.handleCreateUrlFormSubmit = this.handleCreateUrlFormSubmit.bind(this)
 } //end of constructor
 
 
@@ -24,25 +20,21 @@ class CreateUrlForm extends Component {
 //   })
 // }
 
-handleHeroNameChange(event) {
-  const heroName = event.target.value
+handleUrlInputChange(event) {
+  const link = event.target.value
   this.setState({
-    hero: {
-      name: heroName,
-    },
+    link: link,
   })
 }
 
-handleCreateStoryFormSubmit(event) {
+handleCreateUrlFormSubmit(event) {
   event.preventDefault()
-  const characters = {
-    hero: this.state.hero,
+  const link = {
+    link: this.state.link,
   }
-  const user_id = this.props.user_id
   console.log('CreateUrlForm submitted: ', this.state)
-  console.log(`user_id is:`, user_id)
-  this.props.handleSubmit( characters, user_id )
-  this.setState({story: ''}) //this clears form onSubmit
+  this.props.handleSubmit( link )
+  this.setState({link: ''}) //this clears form onSubmit
 }
 
 
@@ -53,7 +45,7 @@ render() {
     <div className="CreateUrlForm">
       <Grid>
         <Grid.Row centered>
-          <Form onSubmit={this.handleCreateStoryFormSubmit}>
+          <Form onSubmit={this.handleCreateUrlFormSubmit}>
 
             {/* <Form.Field required>
               <label>Last name</label>
@@ -68,7 +60,7 @@ render() {
               type="text"
               // width={12}
               //key="heroName"
-              onChange={this.handleHeroNameChange.bind(this)} />
+              onChange={this.handleUrlInputChange.bind(this)} />
 
               <Form.Button content="Submit" type="submit" primary/>
 
