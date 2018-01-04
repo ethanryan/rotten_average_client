@@ -15,14 +15,12 @@ class RottenAverageContainer extends Component {
       ],
     }
   }
-  
-  componentDidMount() {
 
+  componentDidMount() {
     api.getUrls()
     .then( data => this.setState({
       urls: data
     }) )
-
   }
 
   handleSubmit(url) {
