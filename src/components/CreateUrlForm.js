@@ -40,7 +40,7 @@ class CreateUrlForm extends Component {
   validateLink(string) {
   	var root = "https://www.rottentomatoes.com"
     var answer = string.startsWith(root)
-    console.log(answer)
+    //console.log(answer)
     return answer
   }
 
@@ -55,16 +55,17 @@ class CreateUrlForm extends Component {
   }
 
 
-
   render() {
 
-    let fieldContainerClass = 'field-container'
-    const { link, valid } = this.state
+    const isDisabled = this.state.valid ? false : true
 
-    if (!valid) {
+    let fieldContainerClass = 'field-container'
+
+    if (!this.state.valid) {
       fieldContainerClass += ' error'
     }
 
+    console.log('state from CreateUrlForm: ', this.state)
     return(
 
       <div className="CreateUrlForm">
@@ -73,13 +74,12 @@ class CreateUrlForm extends Component {
 
         <Grid centered columns={2}>
           <Grid.Row centered textAlign='center'>
-            <Grid.Column centered>
+            <Grid.Column>
 
               <Form onSubmit={this.handleSubmit}>
 
                 <div className={fieldContainerClass}>
                 <Form.Field
-                  centered
                   label="Add URL"
                   placeholder="url here"
                   autoFocus
@@ -92,7 +92,12 @@ class CreateUrlForm extends Component {
                 </div>
 
                   <Segment basic textAlign='center'>
-                    <Form.Button content="Submit" type="submit" primary/>
+                    <Form.Button
+                      content="Submit"
+                      type="submit"
+                      primary
+                      disabled={isDisabled}
+                    />
                   </Segment>
 
                 </Form>

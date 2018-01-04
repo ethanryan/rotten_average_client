@@ -26,8 +26,8 @@ const AllUrls = (props) => {
       return audience_score
     }
     if ( !(tomato_meter === "null") && !(audience_score === "null") ) {
-      var tomato = parseInt(tomato_meter)
-      var audience = parseInt(audience_score)
+      var tomato = parseInt(tomato_meter, 10)
+      var audience = parseInt(audience_score, 10)
       var total = tomato + audience
       var totalDividedByTwo = (total / 2)
       var answer = totalDividedByTwo.toString()
@@ -55,8 +55,8 @@ const AllUrls = (props) => {
     </div>
   )
 
-console.log('allOfTheUrls.length: ', allOfTheUrls.length)
-console.log('eachUrl: ', eachUrl)
+//console.log('allOfTheUrls.length: ', allOfTheUrls.length)
+//console.log('eachUrl: ', eachUrl)
 
 return(
   <div className="AllUrls">
