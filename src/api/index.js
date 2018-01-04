@@ -1,8 +1,6 @@
 // for local server rails api:
 const baseUrl = 'http://localhost:3000'
 
-// for hosted heroku api:
-//const baseUrl = 'https://word-nerds-api.herokuapp.com'
 
 export function getUrls() {
   return fetch(`${baseUrl}/urls`, {
@@ -26,7 +24,7 @@ export function createUrl(link) {
     mode: 'cors',
     method: 'POST',
     body: JSON.stringify({
-        url: link, //this needs to be in this format!!!
+      url: link,
     })
   }).then( res => res.json() )
 }

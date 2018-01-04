@@ -46,7 +46,7 @@ const AllUrls = (props) => {
           </Card.Header>
             <h1>{urlObject.title ? urlObject.title : "urlObject.title here"}</h1>
             <h2>{urlObject.movie_or_tv ? movieOrTVshow(urlObject.movie_or_tv) : "urlObject.movie_or_show here"}</h2>
-            <h3>RottenAverage: { rottenAverage(urlObject.tomato_meter, urlObject.audience_score) }</h3>
+            <h3 className={ rottenAverage(urlObject.tomato_meter, urlObject.audience_score) > 50 ? "red" : "green" }>RottenAverage: { rottenAverage(urlObject.tomato_meter, urlObject.audience_score) }</h3>
             <p>Tomato Meter: {urlObject.tomato_meter ? urlObject.tomato_meter : "urlObject.tomato_meter here"}</p>
             <p>Audience Score: {urlObject.audience_score ? urlObject.audience_score : "urlObject.audience_score here"}</p>
             <a href={urlObject.link} target="_blank">{urlObject.link ? urlObject.link : "urlObject.link here"}</a>

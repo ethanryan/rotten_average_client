@@ -1,17 +1,22 @@
 .App {
   text-align: center;
+  background: linear-gradient(141deg, #0fb8ad 0%, #1FC8D2 51%, #2cb5e8 75%);
 }
 
-.App-logo {
+/*.App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-}
+}*/
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  /*background-color: gray;*/
+  /*background: linear-gradient(141deg, #0fb8ad 0%, #1FC8D2 51%, #2cb5e8 75%);*/
+  padding: 20px 70px 20px 70px;
+  /*top, right, bottom, left*/
   color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: large;
 }
 
 .App-title {
@@ -24,22 +29,19 @@
 
 .App-footer {
   font-size: large;
-  background-color: pink;
+  background-color: gray;
+  color: gold;
 }
 
 .CreateUrlForm {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   border-radius: 25px;
-  background: white;
+  background: linear-gradient(to right, green, red);
+  color: white;
 
-  /*padding-top: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;*/
-
+  padding: 20px 20px 20px 20px;
   margin: 5px 10px 5px 10px;
   /*top, right, bottom, left*/
-  white-space: pre-wrap; /*this is to preserve line breaks added by users*/
   line-height: 1.1;
 }
 
@@ -53,12 +55,20 @@
 }
 
 .EachUrl {
-  border: 2px solid orange;
-  border-radius: 25px;
+  border: 3px solid orange;
+  /*border-radius: 25px;*/
   background: white;
   margin: 5px 15px 50px 15px;
-  padding: 10px 10px 10px 10px;
+  /*padding: 10px 10px 10px 10px;*/
   /*top right bottom left*/
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
 }
 
 @keyframes App-logo-spin {
