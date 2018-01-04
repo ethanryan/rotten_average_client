@@ -51,7 +51,7 @@ const AllUrls = (props) => {
             <h3>RottenAverage: { rottenAverage(urlObject.tomato_meter, urlObject.audience_score) }</h3>
             <p>Tomato Meter: {urlObject.tomato_meter ? urlObject.tomato_meter : "urlObject.tomato_meter here"}</p>
             <p>Audience Score: {urlObject.audience_score ? urlObject.audience_score : "urlObject.audience_score here"}</p>
-            <a href={urlObject.url} target="_blank">{urlObject.url ? urlObject.url : "urlObject.url here"}</a>
+            <a href={urlObject.link} target="_blank">{urlObject.link ? urlObject.link : "urlObject.link here"}</a>
         </Card.Content>
       </Card>
     </div>
