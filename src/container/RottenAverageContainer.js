@@ -13,12 +13,9 @@ class RottenAverageContainer extends Component {
       urls: [
         {link: 'url_here'}
       ],
-      image: '',
-      nameOrPasswordError: false,
-      usernameExistsError: false,
-   }
+    }
   }
-
+  
   componentDidMount() {
 
     api.getUrls()
@@ -28,7 +25,6 @@ class RottenAverageContainer extends Component {
 
   }
 
-///////get this fucker working...
   handleSubmit(url) {
     api.createUrl(url)
     .then( url => this.setState(
@@ -38,28 +34,27 @@ class RottenAverageContainer extends Component {
     )
   )
 }
-  //this.props.history.push(`/`) //redirect to root
 
 
 render() {
 
-    console.log('state from RottenAverageContainer: ', this.state)
-    return(
-      <div>
+  console.log('state from RottenAverageContainer: ', this.state)
+  return(
+    <div>
 
-        <CreateUrlForm
-          //props for CreateUrlForm
-          handleSubmit={this.handleSubmit.bind(this)}
-        />
+      <CreateUrlForm
+        //props for CreateUrlForm
+        handleSubmit={this.handleSubmit.bind(this)}
+      />
 
-        <AllUrls
-          //props for AllUrls
-          urls={this.state.urls}
-         />
+      <AllUrls
+        //props for AllUrls
+        urls={this.state.urls}
+      />
 
-      </div>
-    )
-  }
+    </div>
+  )
+}
 }
 
 export default RottenAverageContainer

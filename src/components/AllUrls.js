@@ -6,7 +6,6 @@ const AllUrls = (props) => {
 
   const allOfTheUrls = props.urls //an array
 
-
   function movieOrTVshow(movie_or_tv) {
     if (movie_or_tv === "m") {
       return "movie"
@@ -38,7 +37,6 @@ const AllUrls = (props) => {
 
   const eachUrl = allOfTheUrls.map( (urlObject) =>
 
-
     <div key={urlObject.id ? urlObject.id : "urlObject.id here"} className="EachUrl">
 
       <Card fluid >
@@ -57,8 +55,6 @@ const AllUrls = (props) => {
     </div>
   )
 
-console.log('hello from AllUrls, props: ', props)
-console.log('allOfTheUrls: ', allOfTheUrls)
 console.log('allOfTheUrls.length: ', allOfTheUrls.length)
 console.log('eachUrl: ', eachUrl)
 
