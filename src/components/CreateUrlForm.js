@@ -50,8 +50,12 @@ class CreateUrlForm extends Component {
       link: this.state.link,
     }
     console.log('CreateUrlForm submitted: ', this.state)
-    this.props.handleSubmit( link )
-    this.setState({link: ''})
+    if (this.state.link === "") {
+      alert('Must enter Rotten Tomatoes URL!')
+    } else {
+      this.props.handleSubmit( link )
+      this.setState({link: ''})
+    }
   }
 
 
