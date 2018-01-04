@@ -20,10 +20,6 @@ class App extends Component {
             </h2>
             <p>
               Rotten Average takes a Rotten Tomatoes URL as input and returns the average score of that movie or TV show season.
-              <br></br>
-              Rotten Averages above 50 are colored red, for freshness.
-              <br></br>
-              Rotten Averages 50 and below are colored green, for rotten.
             </p>
           </header>
 

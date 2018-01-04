@@ -20,7 +20,7 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-intro {
@@ -39,7 +39,7 @@
   background: linear-gradient(to right, green, red);
   color: white;
 
-  padding: 20px 20px 20px 20px;
+  padding: 30px 20px 20px 20px;
   margin: 5px 10px 5px 10px;
   /*top, right, bottom, left*/
   line-height: 1.1;
@@ -56,10 +56,8 @@
 
 .EachUrl {
   border: 3px solid orange;
-  /*border-radius: 25px;*/
   background: white;
   margin: 5px 15px 50px 15px;
-  /*padding: 10px 10px 10px 10px;*/
   /*top right bottom left*/
 }
 
@@ -71,7 +69,7 @@
   color: green;
 }
 
-@keyframes App-logo-spin {
+/*@keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+}*/

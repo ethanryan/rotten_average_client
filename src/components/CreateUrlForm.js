@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Form, Grid } from 'semantic-ui-react'
+import { Form, Grid, Segment } from 'semantic-ui-react'
 
 class CreateUrlForm extends Component {
 
@@ -12,7 +12,7 @@ class CreateUrlForm extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  
+
   handleChange(event) {
     this.setState({
       link: event.target.value,
@@ -34,22 +34,29 @@ class CreateUrlForm extends Component {
     return(
 
       <div className="CreateUrlForm">
-        <Grid>
-          <Grid.Row centered>
-            <Form onSubmit={this.handleSubmit}>
+        <Grid centered columns={2}>
+          <Grid.Row centered textAlign='center'>
+            <Grid.Column centered>
 
-              <Form.Field
-                label="Add URL"
-                placeholder="url here"
-                autoFocus
-                control="input"
-                type="text"
-                value={this.state.link}
-                onChange={this.handleChange} />
+              <Form onSubmit={this.handleSubmit}>
 
-                <Form.Button content="Submit" type="submit" primary/>
+                <Form.Field
+                  centered
+                  label="Add URL"
+                  placeholder="url here"
+                  autoFocus
+                  control="input"
+                  type="text"
+                  value={this.state.link}
+                  onChange={this.handleChange} />
 
-              </Form>
+                  <Segment basic textAlign='center'>
+                    <Form.Button content="Submit" type="submit" primary/>
+                  </Segment>
+
+                </Form>
+
+              </Grid.Column>
             </Grid.Row>
           </Grid>
         </div>
